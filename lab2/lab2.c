@@ -51,65 +51,37 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
 
 
 int(timer_test_int)(uint8_t time) {
-  //Testing for invalid inputs
-  if (time == 0)
-  {
-    printf("timer_test_int -> Time interval cannot be zero\n");
-    return 1;
-  }
 
-  //Converting seconds to number of interrupts
-  unsigned int interrupt_number_total = time * DEFAULT_FREQ;
-
-  //Subscribing timer IRQ (IRQ line is masked according to irq_bitmask)
-  uint8_t irq_bitmask;
-  if (timer_subscribe_int(& irq_bitmask) != OK){
-    printf("timer_subscribe_int -> Subscription didn't went through\n");
-    return 1;
-  }
-
-  //Variables that will be used afterwards for driver_receive()
-  int ipc_status;
+  int ipc_status,r;
   message msg;
-  int request;
-
-
-  //Cicle stops when we reach the end of the time interval
-  while (counter < interrupt_number_total) {
-    
-    // Get a request message
-    if ((request = driver_receive(ANY, &msg, &ipc_status)) != 0 ) {
-      printf("driver_receive failed with: %d", request);
+  uint8_t bit_no = 0;
+  timer_subscribe_int(&bit_no);
+  uint8_t irq_set = bit_no;
+  while(time ) { /* You may want to use a different condition */
+    /* Get a request message. */
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+      printf("driver_receive failed with: %d", r);
       continue;
-    }
-    if (is_ipc_notify(ipc_status)) { // received notification
+  }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
       switch (_ENDPOINT_P(msg.m_source)) {
-        case HARDWARE: // hardware interrupt notification
-          if (msg.m_notify.interrupts & irq_bitmask) { // subscribed interrupt
-
-            //handler called to increment the global counter counter
+        case HARDWARE: /* hardware interrupt notification */				
+          if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
             timer_int_handler();
-
-            //timer_print_elapsed_time is called every second
-            if (counter % 60 == 0){
+            if(counter % 60 == 0)
+            {
               timer_print_elapsed_time();
+              time--;
             }
           }
           break;
-
         default:
-          break; // no other notifications expected: do nothing
-      }
-    }
-    else { //received a standard message, not a notification
-      // no standard messages expected: do nothing
-    }
+          break; /* no other notifications expected: do nothing */	
   }
-
-  //unsubscribing timer IRQ
-  if (timer_unsubscribe_int() != OK){
-    printf("timer_test_int -> Error unsubscribing from the timer interrupt!\n");
-    return 1;
+  } else { /* received a standard message, not a notification */
+   /* no standard messages expected: do nothing */
   }
+  }
+  timer_unsubscribe_int();
   return 0;
 }
