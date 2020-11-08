@@ -5,23 +5,36 @@
 
 #include "i8254.h"
 
+
 unsigned long counter = 0;
 int hook_id = 0;
 
+
+
+
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  
+  //frequency using the formula
   uint16_t f  = TIMER_FREQ / freq;
-  
+
+
+  //----------------------------//
   uint8_t st = 0,lsbF,msbF;
-  
   uint8_t rbcmd = 0;
+
+  //----------------------------//
 
   //reading first so we can save the 4LSB 
   timer_get_conf(timer,&st);
   
   //saving the first 4LSB 
   rbcmd = st & 0x0F; 
+
+
+  //initialization mode
+  rbcmd |= TIMER_LSB_MSB;
   
+
+  //selecting the correct control word for the timer
   switch (timer)
   {
     case 0: 
@@ -36,22 +49,24 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
     default:
       return 1;
   }
-
-  
-  rbcmd |= TIMER_LSB_MSB;
   
 
 
-  
+  //writing the control word
   if (sys_outb(TIMER_CTRL,rbcmd))
   {
     return 1;
   }
   
+
+  //getting the frequency we want to write
+  //splitted in two bytes
   if (util_get_LSB(f,&lsbF) || util_get_MSB(f,&msbF))
   {
     return 1;
   }
+
+  //writing the frequency lsbF first and msbF afterwards
   if (sys_outb(TIMER_0 + timer,lsbF) || sys_outb(TIMER_0 + timer, msbF))
   {
     return 1;
@@ -75,7 +90,9 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
   return 0;
 }
 
-int timer_unsubscribe_int() {
+
+
+int (timer_unsubscribe_int)() {
   if (sys_irqdisable(&hook_id) != OK) {
 
     printf("sys_irqdisable of timer_unsubscribe_int failed.\n");
@@ -89,10 +106,12 @@ int timer_unsubscribe_int() {
   return 0;
 }
 
-void timer_int_handler() {
+
+
+void (timer_int_handler)() {
   counter++;
-  return;
 }
+
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
@@ -125,7 +144,11 @@ int (timer_display_conf)(uint8_t timer, uint8_t st,enum timer_status_field field
       conf.in_mode = (st & (BIT(4) | BIT(5))) >> 4;
       break;
     case tsf_mode:
-      conf.count_mode = st & (BIT(1) | BIT(2) | BIT(3)) >> 1;
+      conf.count_mode = (st & (BIT(1) | BIT(2) | BIT(3))) >> 1;
+      if (conf.count_mode & BIT(1))
+      {
+        conf.count_mode = conf.count_mode & BIT(2);
+      }
       break;
     default:
       break;
