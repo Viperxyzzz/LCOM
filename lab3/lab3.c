@@ -91,8 +91,19 @@ int(kbd_test_scan)() {
 int(kbd_test_poll)() {
   while (scancode != ESC_KEY)
   {
-    
+    if(kbc_get_scancode())
+    {
+      if(tickdelay(micros_to_ticks(DELAY_US)))
+        return 1;
+      continue;
+    }
+    kbc_verify_scancode();
+    if(complete_scancode)
+    {
+      print_scancode();
+    }
   }
+
   return 1;
 }
 
