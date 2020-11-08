@@ -18,7 +18,7 @@
 #define OUT_BUFF   0x60
 #define STATUS_REG 0x64
 
-
+#define DELAY_US    20000
 
 
 
