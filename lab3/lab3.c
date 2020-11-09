@@ -113,20 +113,20 @@ int(kbd_test_poll)() {
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
-  uint8_t timer_bit_mask = TIMER0_IRQ;
-  uint8_t kbd_bit_mask   = IRQ1;
+  uint8_t timer_bit_no = TIMER0_IRQ;
+  uint8_t kbd_bit_no   = IRQ1;
   uint8_t wait = 0;
 
 
-  int irq_set = BIT(timer_bit_mask);
-  int kbd_set = BIT(kbd_bit_mask);
+  int irq_set = BIT(timer_bit_no);
+  int kbd_set = BIT(kbd_bit_no);
 
-  if(timer_subscribe_int(&timer_bit_mask))
+  if(timer_subscribe_int(&timer_bit_no))
   {
     return 1;
   }
 
-  if(kbd_subscribe_int(&kbd_bit_mask))
+  if(kbd_subscribe_int(&kbd_bit_no))
   {
     return 1;
   }
