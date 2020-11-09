@@ -6,10 +6,8 @@
 #include "i8254.h"
 
 
-unsigned long counter = 0;
-int hook_id = 0;
-
-
+unsigned long timer_counter = 0;
+int timer_hook_id = 0;
 
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
@@ -79,11 +77,12 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 int (timer_subscribe_int)(uint8_t *bit_no) {
 
   //bit_no is a return argument which contains the bit mask created from hook_id
-  *bit_no = BIT(hook_id);
+  *bit_no = TIMER0_IRQ;
+  timer_hook_id = TIMER0_IRQ;
 
   //subscribes notifications from timer0 based on hook_id passed as 3rd argument
   //from now on the IRQ line 0 will be masked
-  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id) != OK){
+  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id) != OK){
     printf("sys_irqsetpolicy failed.\n");
     return 1;
   }
@@ -93,15 +92,8 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
 
 
 int (timer_unsubscribe_int)() {
-  if (sys_irqdisable(&hook_id) != OK) {
-
-    printf("sys_irqdisable of timer_unsubscribe_int failed.\n");
-    return -1;
-  }
-  if (sys_irqrmpolicy(&hook_id) != OK) {
-
-    printf("sys_irqrmpolicy of timer_unsubscribe_int failed.\n");
-    return -1;
+  if (sys_irqrmpolicy(&timer_hook_id)) {
+    return 1;
   }
   return 0;
 }
@@ -109,7 +101,7 @@ int (timer_unsubscribe_int)() {
 
 
 void (timer_int_handler)() {
-  counter++;
+  timer_counter++;
 }
 
 
