@@ -7,9 +7,13 @@
 
 
 unsigned long timer_counter = 0;
+<<<<<<< HEAD
 int hook_id = 0;
 
 
+=======
+int timer_hook_id = 0;
+>>>>>>> 8208aed7dfbda69aa379838319ae7d1a98104507
 
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
@@ -79,17 +83,27 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 int (timer_subscribe_int)(uint8_t *bit_no) {
 
   //bit_no is a return argument which contains the bit mask created from hook_id
+<<<<<<< HEAD
   *bit_no = BIT(hook_id);
 
   //subscribes notifications from timer0 based on hook_id passed as 3rd argument
   //from now on the IRQ line 0 will be masked
   if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id) != OK){
+=======
+  *bit_no = TIMER0_IRQ;
+  timer_hook_id = TIMER0_IRQ;
+
+  //subscribes notifications from timer0 based on hook_id passed as 3rd argument
+  //from now on the IRQ line 0 will be masked
+  if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id) != OK){
+>>>>>>> 8208aed7dfbda69aa379838319ae7d1a98104507
     printf("sys_irqsetpolicy failed.\n");
     return 1;
   }
   return 0;
 }
 
+<<<<<<< HEAD
 
 
 int (timer_unsubscribe_int)() {
@@ -97,6 +111,13 @@ int (timer_unsubscribe_int)() {
 
     printf("sys_irqrmpolicy of timer_unsubscribe_int failed.\n");
     return -1;
+=======
+
+
+int (timer_unsubscribe_int)() {
+  if (sys_irqrmpolicy(&timer_hook_id)) {
+    return 1;
+>>>>>>> 8208aed7dfbda69aa379838319ae7d1a98104507
   }
   return 0;
 }

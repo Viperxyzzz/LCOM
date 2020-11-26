@@ -4,7 +4,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+<<<<<<< HEAD
 extern unsigned long timer_counter;
+=======
+extern unsigned long counter;
+>>>>>>> 8208aed7dfbda69aa379838319ae7d1a98104507
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -42,19 +46,27 @@ int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
 }
 
 int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
-  
-  
-  return timer_set_frequency(timer,freq);
+
+  if (timer_set_frequency(timer,freq) != OK)
+    return 1;
+
+  return 0;
 }
+
 
 int(timer_test_int)(uint8_t time) {
 
   int ipc_status,r;
   message msg;
   uint8_t bit_no = 0;
+<<<<<<< HEAD
   int irq_set = BIT(bit_no);
   timer_subscribe_int(&bit_no);
   
+=======
+  timer_subscribe_int(&bit_no);
+  uint8_t irq_set = bit_no;
+>>>>>>> 8208aed7dfbda69aa379838319ae7d1a98104507
   while(time ) { /* You may want to use a different condition */
     /* Get a request message. */
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
@@ -66,7 +78,11 @@ int(timer_test_int)(uint8_t time) {
         case HARDWARE: /* hardware interrupt notification */				
           if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
             timer_int_handler();
+<<<<<<< HEAD
             if(timer_counter % 60 == 0)
+=======
+            if(counter % 60 == 0)
+>>>>>>> 8208aed7dfbda69aa379838319ae7d1a98104507
             {
               timer_print_elapsed_time();
               time--;
