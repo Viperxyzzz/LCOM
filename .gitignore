@@ -1,1 +1,13 @@
 .minix-src
+lab0
+lab2
+lab3
+lab5
+keyboard.o
+lab4.o
+mouse.o
+output.txt
+trace.txt
+utils.o
+../lcom.code-workspace
+.gdbinit
