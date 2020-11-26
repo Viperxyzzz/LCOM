@@ -7,6 +7,8 @@
 #include <stdio.h>
 
 // Any header files included below this line should have been created by you
+#include "videocard.h"
+
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)

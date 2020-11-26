@@ -12,6 +12,7 @@ static unsigned bits_per_pixel; /* Number of VRAM bits per pixel */
 int (set_vbe_mod)(uint16_t mode)
 {
     reg86_t r;
+    memset(&r, 0, sizeof(reg86_t));
     r.ax = 0x4F02;
     r.ah = 0x4F;
     r.bx = 1 << 14 | mode;
@@ -46,8 +47,8 @@ void* (vg_init)(uint16_t mode)
 
 
     struct minix_mem_range mr;
-    unsigned int vram_base;
-    unsigned int vram_size;
+    unsigned int vram_base = vmi_p.PhysBasePtr;
+    unsigned int vram_size = h_res * v_res * (bits_per_pixel >> 3);
 
     int r;
 
@@ -63,7 +64,7 @@ void* (vg_init)(uint16_t mode)
     if(video_mem == MAP_FAILED)
         panic("couldn't map video memory");
 
-    if(set_vbe_mode(mode))
+    if(set_vbe_mod(mode))
         return NULL;
     return video_mem;
     
