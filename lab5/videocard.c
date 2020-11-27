@@ -1,6 +1,6 @@
 #include "videocard.h"
 
-static char *video_mem;		/* Process (virtual) address to which VRAM is mapped */
+static char *video_mem = NULL;		/* Process (virtual) address to which VRAM is mapped */
 static unsigned h_res;	        /* Horizontal resolution in pixels */
 static unsigned v_res;	        /* Vertical resolution in pixels */
 static unsigned bits_per_pixel; /* Number of VRAM bits per pixel */
@@ -68,4 +68,31 @@ void* (vg_init)(uint16_t mode)
         return NULL;
     return video_mem;
     
+}
+
+
+
+int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
+{ 
+    char* base = video_mem + (bits_per_pixel >> 3) * (y * h_res + x);
+    for(uint16_t i = 0; i < len; i++)
+    {
+        for (uint8_t j = 0; j < (bits_per_pixel >> 3) ; j++)
+        {
+            *base = color;
+            base++;
+        }
+    }
+    return 0;
+}
+
+
+
+int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color)
+{
+    for(uint16_t i = y; i < y + height; i++)
+    {
+        vg_draw_hline(x,i,width,color);
+    }
+    return 0;
 }
