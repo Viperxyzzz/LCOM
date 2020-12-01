@@ -2,12 +2,13 @@
 
 uint8_t scancode = 0,size = 1,bytes[2];
 static bool make = true;
-static bool complete_scancode = true;
+bool complete_scancode = true;
 static int hook_id = 0;
 
 int (kbd_subscribe_int)(uint8_t *bit_no)
 {
   *bit_no = IRQ1;
+  hook_id = IRQ1;
   if(sys_irqsetpolicy(IRQ1, IRQ_REENABLE | IRQ_EXCLUSIVE,&hook_id))
   {
     return 1;

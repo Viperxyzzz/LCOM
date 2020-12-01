@@ -8,6 +8,8 @@
 extern uint8_t scancode;
 
 
+
+
 int (kbd_subscribe_int)(uint8_t *bit_no);
 int (kbd_unsubscribe_int)();
 int (kbc_get_scancode)();
