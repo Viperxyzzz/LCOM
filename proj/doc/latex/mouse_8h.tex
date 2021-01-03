@@ -1,0 +1,143 @@
+\hypertarget{mouse_8h}{}\doxysection{C\+:/\+Users/bon4\+\_\+/\+Documents/\+LCOM/shared/proj/src/mouse.h File Reference}
+\label{mouse_8h}\index{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/mouse.h@{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/mouse.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}i8042.\+h\char`\"{}}\newline
+Include dependency graph for mouse.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{mouse_8h_a08895a8a691590216c1e72bbf1b2d333}{mouse\+\_\+subscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em subscribes mouse interrupts \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_a3ecf823d80520009ae5e0d76ae40a3c3}{mouse\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em unsubscribes mouse interrupts \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{mouse_8h_a210374b50462acdedab00df64d5cea3c}{mouse\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Reads the output buffer of the mouse. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_a98f85ef5d2e59b7d0bf3d670bc1d7e39}{analize\+\_\+buffer}} ()
+\begin{DoxyCompactList}\small\item\em Reads the status register and the output buffer, verifying if everything we\textquotesingle{}re doing is valid. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_a1ffdbf8a53d4665cdf461c37e1476124}{process\+\_\+packet}} ()
+\begin{DoxyCompactList}\small\item\em saves the packets we\textquotesingle{}re currently reading \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{mouse_8h_a626208129dd9f0b0dacc816aab4c784c}{parse\+\_\+packet}} ()
+\begin{DoxyCompactList}\small\item\em parses the packets to @mouse\+\_\+packets \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_a3f8655dd3127f1644ff543a84bd0dc91}{send\+\_\+cmd\+\_\+mouse}} (uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em sends a command to the mouse \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct packet \mbox{\hyperlink{mouse_8h_ab76dc8ab1ceacddfa954789afaa3ae53}{mouse\+\_\+packets}}
+\begin{DoxyCompactList}\small\item\em parsed content of the mouse \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mouse_8h_af6b1fef28954e41d75acf35f76bc8d39}{complete}}
+\begin{DoxyCompactList}\small\item\em indicates if we\textquotesingle{}re done parsing a packet \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mouse_8h_a98f85ef5d2e59b7d0bf3d670bc1d7e39}\label{mouse_8h_a98f85ef5d2e59b7d0bf3d670bc1d7e39}} 
+\index{mouse.h@{mouse.h}!analize\_buffer@{analize\_buffer}}
+\index{analize\_buffer@{analize\_buffer}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{analize\_buffer()}{analize\_buffer()}}
+{\footnotesize\ttfamily int() analize\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads the status register and the output buffer, verifying if everything we\textquotesingle{}re doing is valid. 
+
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes successfully,1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_a210374b50462acdedab00df64d5cea3c}\label{mouse_8h_a210374b50462acdedab00df64d5cea3c}} 
+\index{mouse.h@{mouse.h}!mouse\_ih@{mouse\_ih}}
+\index{mouse\_ih@{mouse\_ih}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_ih()}{mouse\_ih()}}
+{\footnotesize\ttfamily void() mouse\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads the output buffer of the mouse. 
+
+\mbox{\Hypertarget{mouse_8h_a08895a8a691590216c1e72bbf1b2d333}\label{mouse_8h_a08895a8a691590216c1e72bbf1b2d333}} 
+\index{mouse.h@{mouse.h}!mouse\_subscribe\_int@{mouse\_subscribe\_int}}
+\index{mouse\_subscribe\_int@{mouse\_subscribe\_int}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_subscribe\_int()}{mouse\_subscribe\_int()}}
+{\footnotesize\ttfamily int() mouse\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+subscribes mouse interrupts 
+
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes successfully,1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_a3ecf823d80520009ae5e0d76ae40a3c3}\label{mouse_8h_a3ecf823d80520009ae5e0d76ae40a3c3}} 
+\index{mouse.h@{mouse.h}!mouse\_unsubscribe\_int@{mouse\_unsubscribe\_int}}
+\index{mouse\_unsubscribe\_int@{mouse\_unsubscribe\_int}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_unsubscribe\_int()}{mouse\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int() mouse\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+unsubscribes mouse interrupts 
+
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes successfully,1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_a626208129dd9f0b0dacc816aab4c784c}\label{mouse_8h_a626208129dd9f0b0dacc816aab4c784c}} 
+\index{mouse.h@{mouse.h}!parse\_packet@{parse\_packet}}
+\index{parse\_packet@{parse\_packet}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{parse\_packet()}{parse\_packet()}}
+{\footnotesize\ttfamily void() parse\+\_\+packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+parses the packets to @mouse\+\_\+packets 
+
+\mbox{\Hypertarget{mouse_8h_a1ffdbf8a53d4665cdf461c37e1476124}\label{mouse_8h_a1ffdbf8a53d4665cdf461c37e1476124}} 
+\index{mouse.h@{mouse.h}!process\_packet@{process\_packet}}
+\index{process\_packet@{process\_packet}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{process\_packet()}{process\_packet()}}
+{\footnotesize\ttfamily int() process\+\_\+packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+saves the packets we\textquotesingle{}re currently reading 
+
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes successfully,1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_a3f8655dd3127f1644ff543a84bd0dc91}\label{mouse_8h_a3f8655dd3127f1644ff543a84bd0dc91}} 
+\index{mouse.h@{mouse.h}!send\_cmd\_mouse@{send\_cmd\_mouse}}
+\index{send\_cmd\_mouse@{send\_cmd\_mouse}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{send\_cmd\_mouse()}{send\_cmd\_mouse()}}
+{\footnotesize\ttfamily int() send\+\_\+cmd\+\_\+mouse (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+sends a command to the mouse 
+
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes successfully,1 otherwise 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mouse_8h_af6b1fef28954e41d75acf35f76bc8d39}\label{mouse_8h_af6b1fef28954e41d75acf35f76bc8d39}} 
+\index{mouse.h@{mouse.h}!complete@{complete}}
+\index{complete@{complete}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{complete}{complete}}
+{\footnotesize\ttfamily bool complete\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+indicates if we\textquotesingle{}re done parsing a packet 
+
+\mbox{\Hypertarget{mouse_8h_ab76dc8ab1ceacddfa954789afaa3ae53}\label{mouse_8h_ab76dc8ab1ceacddfa954789afaa3ae53}} 
+\index{mouse.h@{mouse.h}!mouse\_packets@{mouse\_packets}}
+\index{mouse\_packets@{mouse\_packets}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_packets}{mouse\_packets}}
+{\footnotesize\ttfamily struct packet mouse\+\_\+packets\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+parsed content of the mouse 
+

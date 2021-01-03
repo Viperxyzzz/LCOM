@@ -1,0 +1,71 @@
+\hypertarget{background_8h}{}\doxysection{C\+:/\+Users/bon4\+\_\+/\+Documents/\+LCOM/shared/proj/src/background.h File Reference}
+\label{background_8h}\index{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/background.h@{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/background.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}videocard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../assets/background.\+xpm\char`\"{}}\newline
+Include dependency graph for background.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{background_8h_ae3c20fa712df5178ac481b723eeda0cb}{alloc\+\_\+background}} ()
+\begin{DoxyCompactList}\small\item\em allocs the memory needed to display the background \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{background_8h_ae947fa47b050ea1b535d53d8caa0240a}{free\+\_\+background}} ()
+\begin{DoxyCompactList}\small\item\em frees the memory that we alloced to display the background \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{background_8h_a63a644c33686aebf568832bc8d63d282}{draw\+\_\+background}} (bool init)
+\begin{DoxyCompactList}\small\item\em draws the background on the second buffer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{background_8h_a8e73ff22194d3cf17b1e23cabdbfc204}{reset\+\_\+to\+\_\+background}} ()
+\begin{DoxyCompactList}\small\item\em clears the screen and resets it to display the background \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{background_8h_ae3c20fa712df5178ac481b723eeda0cb}\label{background_8h_ae3c20fa712df5178ac481b723eeda0cb}} 
+\index{background.h@{background.h}!alloc\_background@{alloc\_background}}
+\index{alloc\_background@{alloc\_background}!background.h@{background.h}}
+\doxysubsubsection{\texorpdfstring{alloc\_background()}{alloc\_background()}}
+{\footnotesize\ttfamily void alloc\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+allocs the memory needed to display the background 
+
+\mbox{\Hypertarget{background_8h_a63a644c33686aebf568832bc8d63d282}\label{background_8h_a63a644c33686aebf568832bc8d63d282}} 
+\index{background.h@{background.h}!draw\_background@{draw\_background}}
+\index{draw\_background@{draw\_background}!background.h@{background.h}}
+\doxysubsubsection{\texorpdfstring{draw\_background()}{draw\_background()}}
+{\footnotesize\ttfamily int draw\+\_\+background (\begin{DoxyParamCaption}\item[{bool}]{init }\end{DoxyParamCaption})}
+
+
+
+draws the background on the second buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init} & if its the first time we\textquotesingle{}re drawing the background \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes successfully, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{background_8h_ae947fa47b050ea1b535d53d8caa0240a}\label{background_8h_ae947fa47b050ea1b535d53d8caa0240a}} 
+\index{background.h@{background.h}!free\_background@{free\_background}}
+\index{free\_background@{free\_background}!background.h@{background.h}}
+\doxysubsubsection{\texorpdfstring{free\_background()}{free\_background()}}
+{\footnotesize\ttfamily void free\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+frees the memory that we alloced to display the background 
+
+\mbox{\Hypertarget{background_8h_a8e73ff22194d3cf17b1e23cabdbfc204}\label{background_8h_a8e73ff22194d3cf17b1e23cabdbfc204}} 
+\index{background.h@{background.h}!reset\_to\_background@{reset\_to\_background}}
+\index{reset\_to\_background@{reset\_to\_background}!background.h@{background.h}}
+\doxysubsubsection{\texorpdfstring{reset\_to\_background()}{reset\_to\_background()}}
+{\footnotesize\ttfamily void reset\+\_\+to\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+clears the screen and resets it to display the background 
+

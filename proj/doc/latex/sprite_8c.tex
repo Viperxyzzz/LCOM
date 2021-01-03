@@ -1,0 +1,76 @@
+\hypertarget{sprite_8c}{}\doxysection{C\+:/\+Users/bon4\+\_\+/\+Documents/\+LCOM/shared/proj/src/sprite.c File Reference}
+\label{sprite_8c}\index{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/sprite.c@{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/sprite.c}}
+{\ttfamily \#include \char`\"{}Sprite.\+h\char`\"{}}\newline
+Include dependency graph for sprite.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$ \mbox{\hyperlink{sprite_8c_a8c9bd7ad1fe65338d94c1a25da7595b5}{create\+\_\+sprite}} (xpm\+\_\+row\+\_\+t pic\mbox{[}$\,$\mbox{]}, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t xspeed, uint16\+\_\+t yspeed)
+\begin{DoxyCompactList}\small\item\em Create a sprite object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sprite_8c_a6c75fbf31230126d2f19b29deaf24b2f}{draw\+\_\+sprite}} (\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$sp)
+\begin{DoxyCompactList}\small\item\em Draws a \mbox{\hyperlink{struct_sprite}{Sprite}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sprite_8c_af16c6befaac9ffb673b9e3c798d542ed}{destroy\+\_\+sprite}} (\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$sp)
+\begin{DoxyCompactList}\small\item\em Destroys a \mbox{\hyperlink{struct_sprite}{Sprite}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sprite_8c_a8c9bd7ad1fe65338d94c1a25da7595b5}\label{sprite_8c_a8c9bd7ad1fe65338d94c1a25da7595b5}} 
+\index{sprite.c@{sprite.c}!create\_sprite@{create\_sprite}}
+\index{create\_sprite@{create\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{create\_sprite()}{create\_sprite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sprite}{Sprite}}$\ast$ create\+\_\+sprite (\begin{DoxyParamCaption}\item[{xpm\+\_\+row\+\_\+t}]{pic\mbox{[}$\,$\mbox{]},  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{xspeed,  }\item[{uint16\+\_\+t}]{yspeed }\end{DoxyParamCaption})}
+
+
+
+Create a sprite object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pic} & the image we want to associate with the sprite \\
+\hline
+{\em x} & horizontal position of the sprite \\
+\hline
+{\em y} & vertical position of the brick \\
+\hline
+{\em xspeed} & horizontal speed of the sprite \\
+\hline
+{\em yspeed} & vertical speed of the sprite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sprite$\ast$ returns a Sprite$\ast$ object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sprite_8c_af16c6befaac9ffb673b9e3c798d542ed}\label{sprite_8c_af16c6befaac9ffb673b9e3c798d542ed}} 
+\index{sprite.c@{sprite.c}!destroy\_sprite@{destroy\_sprite}}
+\index{destroy\_sprite@{destroy\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{destroy\_sprite()}{destroy\_sprite()}}
+{\footnotesize\ttfamily void destroy\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$}]{sp }\end{DoxyParamCaption})}
+
+
+
+Destroys a \mbox{\hyperlink{struct_sprite}{Sprite}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & the sprite we want to destroy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sprite_8c_a6c75fbf31230126d2f19b29deaf24b2f}\label{sprite_8c_a6c75fbf31230126d2f19b29deaf24b2f}} 
+\index{sprite.c@{sprite.c}!draw\_sprite@{draw\_sprite}}
+\index{draw\_sprite@{draw\_sprite}!sprite.c@{sprite.c}}
+\doxysubsubsection{\texorpdfstring{draw\_sprite()}{draw\_sprite()}}
+{\footnotesize\ttfamily int draw\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$}]{sp }\end{DoxyParamCaption})}
+
+
+
+Draws a \mbox{\hyperlink{struct_sprite}{Sprite}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & the sprite we want to draw \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes successfully, 1 otherwise 
+\end{DoxyReturn}

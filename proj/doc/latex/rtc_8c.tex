@@ -1,0 +1,51 @@
+\hypertarget{rtc_8c}{}\doxysection{C\+:/\+Users/bon4\+\_\+/\+Documents/\+LCOM/shared/proj/src/rtc.c File Reference}
+\label{rtc_8c}\index{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/rtc.c@{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/rtc.c}}
+{\ttfamily \#include \char`\"{}rtc.\+h\char`\"{}}\newline
+Include dependency graph for rtc.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{rtc_8c_a7f383813134493bf424f952da8f3f196}{rtc\+\_\+subscribe\+\_\+int}} ()
+\item 
+int() \mbox{\hyperlink{rtc_8c_a97bb5c0b1be08444273141c4ca6d1a2c}{read\+\_\+rtc}} (uint32\+\_\+t address, uint16\+\_\+t $\ast$input)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{rtc_8c_a9ba14bfebecb0a71dfcb7eea19c3a012}{bcd\+\_\+to\+\_\+decimal}} (uint16\+\_\+t x)
+\item 
+void() \mbox{\hyperlink{rtc_8c_afe118aaf7bee04364fb37d1c5fe03909}{get\+\_\+date}} (\mbox{\hyperlink{struct_date}{Date}} $\ast$date)
+\item 
+int() \mbox{\hyperlink{rtc_8c_a4a4fcb4d270a623c52d4ddd429a089e6}{rtc\+\_\+unsuscribe\+\_\+int}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rtc_8c_a9ba14bfebecb0a71dfcb7eea19c3a012}\label{rtc_8c_a9ba14bfebecb0a71dfcb7eea19c3a012}} 
+\index{rtc.c@{rtc.c}!bcd\_to\_decimal@{bcd\_to\_decimal}}
+\index{bcd\_to\_decimal@{bcd\_to\_decimal}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{bcd\_to\_decimal()}{bcd\_to\_decimal()}}
+{\footnotesize\ttfamily uint16\+\_\+t bcd\+\_\+to\+\_\+decimal (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rtc_8c_afe118aaf7bee04364fb37d1c5fe03909}\label{rtc_8c_afe118aaf7bee04364fb37d1c5fe03909}} 
+\index{rtc.c@{rtc.c}!get\_date@{get\_date}}
+\index{get\_date@{get\_date}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{get\_date()}{get\_date()}}
+{\footnotesize\ttfamily void() get\+\_\+date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_date}{Date}} $\ast$}]{date }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rtc_8c_a97bb5c0b1be08444273141c4ca6d1a2c}\label{rtc_8c_a97bb5c0b1be08444273141c4ca6d1a2c}} 
+\index{rtc.c@{rtc.c}!read\_rtc@{read\_rtc}}
+\index{read\_rtc@{read\_rtc}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{read\_rtc()}{read\_rtc()}}
+{\footnotesize\ttfamily int() read\+\_\+rtc (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{address,  }\item[{uint16\+\_\+t $\ast$}]{input }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rtc_8c_a7f383813134493bf424f952da8f3f196}\label{rtc_8c_a7f383813134493bf424f952da8f3f196}} 
+\index{rtc.c@{rtc.c}!rtc\_subscribe\_int@{rtc\_subscribe\_int}}
+\index{rtc\_subscribe\_int@{rtc\_subscribe\_int}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_subscribe\_int()}{rtc\_subscribe\_int()}}
+{\footnotesize\ttfamily int() rtc\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rtc_8c_a4a4fcb4d270a623c52d4ddd429a089e6}\label{rtc_8c_a4a4fcb4d270a623c52d4ddd429a089e6}} 
+\index{rtc.c@{rtc.c}!rtc\_unsuscribe\_int@{rtc\_unsuscribe\_int}}
+\index{rtc\_unsuscribe\_int@{rtc\_unsuscribe\_int}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_unsuscribe\_int()}{rtc\_unsuscribe\_int()}}
+{\footnotesize\ttfamily int() rtc\+\_\+unsuscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

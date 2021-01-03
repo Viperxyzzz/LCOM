@@ -1,0 +1,138 @@
+\hypertarget{videocard_8c}{}\doxysection{C\+:/\+Users/bon4\+\_\+/\+Documents/\+LCOM/shared/proj/src/videocard.c File Reference}
+\label{videocard_8c}\index{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/videocard.c@{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/videocard.c}}
+{\ttfamily \#include \char`\"{}videocard.\+h\char`\"{}}\newline
+Include dependency graph for videocard.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{videocard_8c_a68de9433cc4f09ff07cdab24608d236f}{set\+\_\+vbe\+\_\+mod}} (uint16\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Set the vbe mode object. \end{DoxyCompactList}\item 
+void $\ast$() \mbox{\hyperlink{videocard_8c_aa6c1ff5024cd4d15e476bce487584daa}{vg\+\_\+init}} (uint16\+\_\+t mode)
+\item 
+void() \mbox{\hyperlink{videocard_8c_af1c008594d13de35fffab5d8e993e64b}{pixel\+\_\+set\+\_\+color}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em sets a color of a pixel \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{videocard_8c_a5d8853f182ab463c0d667a1c802a3713}{vg\+\_\+clear\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em clears the screen \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{videocard_8c_a85df6759fffcff7f1ec415a1e105c283}{double\+\_\+buff}} ()
+\begin{DoxyCompactList}\small\item\em parses the content of the second buffer to the main buffer \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{videocard_8c_a78ce7c2bb3f96f7c3c5e7bea966688d9}{vg\+\_\+read\+\_\+xpm}} (xpm\+\_\+map\+\_\+t xpm, uint16\+\_\+t x, uint16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em loads an image and displays it \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{videocard_8c_a536c333f9fae43e4c35e03af06114690}{video\+\_\+buff}}
+\begin{DoxyCompactList}\small\item\em second buffer \end{DoxyCompactList}\item 
+vbe\+\_\+mode\+\_\+info\+\_\+t \mbox{\hyperlink{videocard_8c_a26081be7a771e5c611b33f15caaf831e}{vmi\+\_\+p}}
+\begin{DoxyCompactList}\small\item\em struct with details of the mode we\textquotesingle{}re using \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{videocard_8c_a85df6759fffcff7f1ec415a1e105c283}\label{videocard_8c_a85df6759fffcff7f1ec415a1e105c283}} 
+\index{videocard.c@{videocard.c}!double\_buff@{double\_buff}}
+\index{double\_buff@{double\_buff}!videocard.c@{videocard.c}}
+\doxysubsubsection{\texorpdfstring{double\_buff()}{double\_buff()}}
+{\footnotesize\ttfamily void() double\+\_\+buff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+parses the content of the second buffer to the main buffer 
+
+\mbox{\Hypertarget{videocard_8c_af1c008594d13de35fffab5d8e993e64b}\label{videocard_8c_af1c008594d13de35fffab5d8e993e64b}} 
+\index{videocard.c@{videocard.c}!pixel\_set\_color@{pixel\_set\_color}}
+\index{pixel\_set\_color@{pixel\_set\_color}!videocard.c@{videocard.c}}
+\doxysubsubsection{\texorpdfstring{pixel\_set\_color()}{pixel\_set\_color()}}
+{\footnotesize\ttfamily void() pixel\+\_\+set\+\_\+color (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+sets a color of a pixel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & horizontal position of the pixel \\
+\hline
+{\em y} & vertical position of the pixel \\
+\hline
+{\em color} & the desired color for the pixel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{videocard_8c_a68de9433cc4f09ff07cdab24608d236f}\label{videocard_8c_a68de9433cc4f09ff07cdab24608d236f}} 
+\index{videocard.c@{videocard.c}!set\_vbe\_mod@{set\_vbe\_mod}}
+\index{set\_vbe\_mod@{set\_vbe\_mod}!videocard.c@{videocard.c}}
+\doxysubsubsection{\texorpdfstring{set\_vbe\_mod()}{set\_vbe\_mod()}}
+{\footnotesize\ttfamily int() set\+\_\+vbe\+\_\+mod (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Set the vbe mode object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & desired mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes successfully,1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{videocard_8c_a5d8853f182ab463c0d667a1c802a3713}\label{videocard_8c_a5d8853f182ab463c0d667a1c802a3713}} 
+\index{videocard.c@{videocard.c}!vg\_clear\_screen@{vg\_clear\_screen}}
+\index{vg\_clear\_screen@{vg\_clear\_screen}!videocard.c@{videocard.c}}
+\doxysubsubsection{\texorpdfstring{vg\_clear\_screen()}{vg\_clear\_screen()}}
+{\footnotesize\ttfamily void() vg\+\_\+clear\+\_\+screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+clears the screen 
+
+\mbox{\Hypertarget{videocard_8c_aa6c1ff5024cd4d15e476bce487584daa}\label{videocard_8c_aa6c1ff5024cd4d15e476bce487584daa}} 
+\index{videocard.c@{videocard.c}!vg\_init@{vg\_init}}
+\index{vg\_init@{vg\_init}!videocard.c@{videocard.c}}
+\doxysubsubsection{\texorpdfstring{vg\_init()}{vg\_init()}}
+{\footnotesize\ttfamily void$\ast$() vg\+\_\+init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{videocard_8c_a78ce7c2bb3f96f7c3c5e7bea966688d9}\label{videocard_8c_a78ce7c2bb3f96f7c3c5e7bea966688d9}} 
+\index{videocard.c@{videocard.c}!vg\_read\_xpm@{vg\_read\_xpm}}
+\index{vg\_read\_xpm@{vg\_read\_xpm}!videocard.c@{videocard.c}}
+\doxysubsubsection{\texorpdfstring{vg\_read\_xpm()}{vg\_read\_xpm()}}
+{\footnotesize\ttfamily int() vg\+\_\+read\+\_\+xpm (\begin{DoxyParamCaption}\item[{xpm\+\_\+map\+\_\+t}]{xpm,  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+loads an image and displays it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & the image we want to load \\
+\hline
+{\em x} & horizontal position of the image \\
+\hline
+{\em y} & vertical position of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes sucessfully, 1 otherwise 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{videocard_8c_a536c333f9fae43e4c35e03af06114690}\label{videocard_8c_a536c333f9fae43e4c35e03af06114690}} 
+\index{videocard.c@{videocard.c}!video\_buff@{video\_buff}}
+\index{video\_buff@{video\_buff}!videocard.c@{videocard.c}}
+\doxysubsubsection{\texorpdfstring{video\_buff}{video\_buff}}
+{\footnotesize\ttfamily char$\ast$ video\+\_\+buff}
+
+
+
+second buffer 
+
+\mbox{\Hypertarget{videocard_8c_a26081be7a771e5c611b33f15caaf831e}\label{videocard_8c_a26081be7a771e5c611b33f15caaf831e}} 
+\index{videocard.c@{videocard.c}!vmi\_p@{vmi\_p}}
+\index{vmi\_p@{vmi\_p}!videocard.c@{videocard.c}}
+\doxysubsubsection{\texorpdfstring{vmi\_p}{vmi\_p}}
+{\footnotesize\ttfamily vbe\+\_\+mode\+\_\+info\+\_\+t vmi\+\_\+p}
+
+
+
+struct with details of the mode we\textquotesingle{}re using 
+

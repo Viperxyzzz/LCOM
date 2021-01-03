@@ -1,0 +1,103 @@
+\hypertarget{game_8c}{}\doxysection{C\+:/\+Users/bon4\+\_\+/\+Documents/\+LCOM/shared/proj/src/game.c File Reference}
+\label{game_8c}\index{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/game.c@{C:/Users/bon4\_/Documents/LCOM/shared/proj/src/game.c}}
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for game.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game_8c_ae8f92a4ba530bb31ea0178624c032a9d}{draw\+\_\+score}} (int points, \mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$$\ast$numbers)
+\begin{DoxyCompactList}\small\item\em draws the score on the second buffer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a86791d38bd37fee15149e9495d7a304c}{game\+\_\+over}} (uint8\+\_\+t won, \mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$game\+\_\+over\+\_\+logo, \mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$lose\+\_\+logo, \mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$win\+\_\+logo, \mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$continue\+\_\+logo)
+\begin{DoxyCompactList}\small\item\em draws the game over screen \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_af3829f26cc6d5e77dd08da1be81a2e9c}{detect\+\_\+colisions}} (\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$cursor, uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height)
+\begin{DoxyCompactList}\small\item\em detects the colisions between the cursor and the other entities of the menu \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_a243eebdbcd4975e185ee6db7af1789ec}{breakout}} (\mbox{\hyperlink{game_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$game\+\_\+state)
+\begin{DoxyCompactList}\small\item\em main game loop \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{game_8c_a243eebdbcd4975e185ee6db7af1789ec}\label{game_8c_a243eebdbcd4975e185ee6db7af1789ec}} 
+\index{game.c@{game.c}!breakout@{breakout}}
+\index{breakout@{breakout}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{breakout()}{breakout()}}
+{\footnotesize\ttfamily int breakout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$}]{game\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+main game loop 
+
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes sucessfully, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8c_af3829f26cc6d5e77dd08da1be81a2e9c}\label{game_8c_af3829f26cc6d5e77dd08da1be81a2e9c}} 
+\index{game.c@{game.c}!detect\_colisions@{detect\_colisions}}
+\index{detect\_colisions@{detect\_colisions}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{detect\_colisions()}{detect\_colisions()}}
+{\footnotesize\ttfamily int detect\+\_\+colisions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$}]{cursor,  }\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})}
+
+
+
+detects the colisions between the cursor and the other entities of the menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cursor} & the cursor we\textquotesingle{}re checking \\
+\hline
+{\em x} & horizontal position of the entity \\
+\hline
+{\em y} & vertical position of the entity \\
+\hline
+{\em width} & width of the entity \\
+\hline
+{\em height} & height of the entity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes sucessfully, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8c_ae8f92a4ba530bb31ea0178624c032a9d}\label{game_8c_ae8f92a4ba530bb31ea0178624c032a9d}} 
+\index{game.c@{game.c}!draw\_score@{draw\_score}}
+\index{draw\_score@{draw\_score}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_score()}{draw\_score()}}
+{\footnotesize\ttfamily int draw\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{points,  }\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$$\ast$}]{numbers }\end{DoxyParamCaption})}
+
+
+
+draws the score on the second buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & the score we want to draw \\
+\hline
+{\em numbers} & array with the sprites of numbers from zero to nine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 in case it goes sucessfully, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8c_a86791d38bd37fee15149e9495d7a304c}\label{game_8c_a86791d38bd37fee15149e9495d7a304c}} 
+\index{game.c@{game.c}!game\_over@{game\_over}}
+\index{game\_over@{game\_over}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{game\_over()}{game\_over()}}
+{\footnotesize\ttfamily void game\+\_\+over (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{won,  }\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$}]{game\+\_\+over\+\_\+logo,  }\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$}]{lose\+\_\+logo,  }\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$}]{win\+\_\+logo,  }\item[{\mbox{\hyperlink{struct_sprite}{Sprite}} $\ast$}]{continue\+\_\+logo }\end{DoxyParamCaption})}
+
+
+
+draws the game over screen 
+
+
+\begin{DoxyParams}{Parameters}
+{\em won} & 1 in case the player won, 0 otherwise \\
+\hline
+{\em game\+\_\+over\+\_\+logo} & sprite with the game over logo \\
+\hline
+{\em lose\+\_\+logo} & sprite with the lose logo \\
+\hline
+{\em win\+\_\+logo} & sprite with the win logo \\
+\hline
+{\em continue\+\_\+logo} & sprite with the continue logo \\
+\hline
+\end{DoxyParams}
