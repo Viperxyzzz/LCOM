@@ -113,6 +113,8 @@ int detect_colisions(Sprite* cursor,uint16_t x,uint16_t y, uint16_t width,uint16
     return 1;
 }
 
+
+
 int breakout(state* game_state)
 {
     //interrupts stuff
@@ -319,8 +321,8 @@ int breakout(state* game_state)
                         ball->old_x = ball->x;
                         ball->old_y = ball->y;
 
-                        ball->x += ball->dx * 3;
-                        ball->y += ball->dy * 3;
+                        ball->x += ball->dx;
+                        ball->y += ball->dy;
 
                         if(ball->y >= vmi_p.YResolution)
                             ball->y = 0;
@@ -355,33 +357,44 @@ int breakout(state* game_state)
                         //-----------
                         
                         //paddle colisions
-
+                        
                         if((ball->x >= platform->x && ball->x <= platform->x + platform->width && ball->y >= platform->y && ball->y <= platform->y + platform->height))
                         {
-                            ball->dy *= -1;
+                            float magnitude = pow(((float)ball->dx * (float)ball->dx + (float)ball->dy * (float)ball->dy) ,(1/2));
+                            float vx = (float)ball->dx / magnitude;
+                            float vy = (float)ball->dy / magnitude;
+                            float t = vy * (-1) + vx * 0;
+                            if(t <= 0)
+                            {
+                                ball->dy *= -1;
+                            }
+
                         }
+
 
                         if(ball->y >= platform->y + platform->height)
                         {
                             ball->y = 300;
+                            ball->dx = 3;
+                            ball->dy = 3;
                             lives--;
                         }
                         //-------------
                         
 
-                        bool no_colisions = true;
+                        bool no_colisions = false;
 
                         //draw_ball(ball);
                         for(int i = 0; i < 30; i++)
                         {   
                             
-                            if(no_colisions && !bricks[i]->is_destroyed && (bricks[i]->x <= ball->x && bricks[i]->x + bricks[i]->width >= ball->x && bricks[i]->y <= ball->y && bricks[i]->y + bricks[i]->height >= ball->y))
+                            if(!no_colisions && !bricks[i]->is_destroyed && (bricks[i]->x <= ball->x && bricks[i]->x + bricks[i]->width >= ball->x && bricks[i]->y <= ball->y && bricks[i]->y + bricks[i]->height >= ball->y))
                             {
                                 
                                 bricks[i]->is_destroyed = true;
-                                no_colisions = false;
+                                no_colisions = true;
 
-
+                                
                                 //left side
                                 if(ball->old_x <= bricks[i]->x && ball->x  >= bricks[i]->x)
                                     ball->dx *= -1;
@@ -394,6 +407,7 @@ int breakout(state* game_state)
                                 //down side
                                 else if(ball->old_y > bricks[i]->y + bricks[i]->height && ball->y <= bricks[i]->y + bricks[i]->height)
                                     ball->dy *= -1;
+                                
                                 
 
 

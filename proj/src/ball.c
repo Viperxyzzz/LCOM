@@ -10,8 +10,8 @@ Ball* create_ball(uint16_t x, uint16_t y)
     ball->x = x;
     ball->y = y;
 
-    ball->dx = 1;
-    ball->dy = 1;
+    ball->dx = 3;
+    ball->dy = 3;
 
     ball->old_x = x;
     ball->old_y = y;
