@@ -241,7 +241,7 @@ int breakout(state* game_state)
                     {
                         if(!(cursor->x + mouse_packets.delta_x <= 0))
                             cursor->x += mouse_packets.delta_x;
-                        if(!(cursor->y + mouse_packets.delta_y <= 0))
+                        if(!(cursor->y - mouse_packets.delta_y <= 0))
                             cursor->y -= mouse_packets.delta_y;
                         if(cursor->x + cursor->width >= vmi_p.XResolution)
                             cursor->x = vmi_p.XResolution - cursor->width;

@@ -17,15 +17,10 @@ int (read_rtc)(uint32_t address,uint8_t* input)
     return 0;
 }
 
-uint8_t bcd_to_dec(uint8_t input)
-{
-    return ((input & 0xF) | (input >> 4));
-}
 
 void (get_date)(Date* date)
 {
-    uint8_t data = 0;
-    read_rtc(10,&data);
+
 
 
     uint8_t seconds = 0;

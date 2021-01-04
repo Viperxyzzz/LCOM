@@ -24,11 +24,27 @@ typedef struct
 #define RTC_YEAR     9
 
 
-
+/**
+ * @brief subscribes rtc interrupts
+ * 
+ */
 int(rtc_subscribe_int)();
+/**
+ * @brief reads an @address and parses the data to @input
+ * 
+ */
 int(read_rtc)(uint32_t address,uint8_t* input);
-uint8_t (bcd_to_dec)(uint8_t input);
+
+/**
+ * @brief parses the date to the struct date
+ * 
+ */
 void (get_date)(Date* date);
+
+/**
+ * @brief unsubscribes rtc interrupts
+ * 
+ */
 int(rtc_unsubscribe_int)();
 
 

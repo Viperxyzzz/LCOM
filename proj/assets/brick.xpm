@@ -5,7 +5,7 @@ static xpm_row_t brick_xpm[] = {
 "  c #FF3333",
 ". c #0C0C0C",
 "X c #F9F9F9",
-"o c #FFFFFF",
+"o c #000000",
 /* pixels */
 "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 "o                                                              o",
@@ -36,7 +36,7 @@ static xpm_row_t brick_xpm[] = {
 "o oo                                                        oo o",
 "o oo                                                        oo o",
 "o oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo o",
-"X oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo o",
-"X                                 ....                         o",
-"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXoooooooooooooooooooooo"
+"o oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo o",
+"o                                                              o",
+"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
 };

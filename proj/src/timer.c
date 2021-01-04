@@ -7,7 +7,7 @@
 
 
 static unsigned long timer_counter = 0;
-static int hook_id = 0;
+static int hook_id = TIMER0_IRQ;
 
 
 
