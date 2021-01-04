@@ -36,7 +36,11 @@ Ball* create_ball(uint16_t x, uint16_t y);
  * @return int 0 in case it goes successfully,1 otherwise
  */
 int draw_ball(Ball* ball);
-
+/**
+ * @brief Destroy a ball
+ * 
+ * @param ball the ball we want to destroy
+ */
 void destroy_ball(Ball* ball);
 
 #endif

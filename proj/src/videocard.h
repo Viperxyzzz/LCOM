@@ -4,7 +4,6 @@
 
 
 
-#define INDEXED 0x105
 #define IGNORED 0xFF00F0
 
 

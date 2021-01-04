@@ -6,7 +6,7 @@
 
 typedef struct
 {
-    uint16_t year,month,day,hours,minutes,seconds;
+    uint8_t year,month,day,hours,minutes,seconds;
 }Date;
 
 
@@ -26,8 +26,8 @@ typedef struct
 
 
 int(rtc_subscribe_int)();
-int(read_rtc)(uint32_t address,uint16_t* input);
-uint16_t bcd_to_decimal(uint16_t input);
+int(read_rtc)(uint32_t address,uint8_t* input);
+uint8_t (bcd_to_dec)(uint8_t input);
 void (get_date)(Date* date);
 int(rtc_unsubscribe_int)();
 

@@ -209,6 +209,7 @@ int breakout(state* game_state)
 
     alloc_background();
 
+
     
     //---------------------------------------
 
@@ -236,35 +237,38 @@ int breakout(state* game_state)
                 if(complete)
                 {
                     parse_packet();
-                    if(!(cursor->x + mouse_packets.delta_x <= 0))
-                        cursor->x += mouse_packets.delta_x;
-                    if(!(cursor->y + mouse_packets.delta_y <= 0))
-                        cursor->y -= mouse_packets.delta_y;
-                    if(cursor->x + cursor->width >= vmi_p.XResolution)
-                        cursor->x = vmi_p.XResolution - cursor->width;
-                    if(cursor->y + cursor->height >= vmi_p.YResolution)
-                        cursor->y = vmi_p.YResolution - cursor->height;
-                    if(detect_colisions(cursor,play->x,play->y,play->width,play->height))
+                    if(*game_state == MENU)
                     {
-                        play->map = hovering_play->map;    
-                        if(mouse_packets.lb)
+                        if(!(cursor->x + mouse_packets.delta_x <= 0))
+                            cursor->x += mouse_packets.delta_x;
+                        if(!(cursor->y + mouse_packets.delta_y <= 0))
+                            cursor->y -= mouse_packets.delta_y;
+                        if(cursor->x + cursor->width >= vmi_p.XResolution)
+                            cursor->x = vmi_p.XResolution - cursor->width;
+                        if(cursor->y + cursor->height >= vmi_p.YResolution)
+                            cursor->y = vmi_p.YResolution - cursor->height;
+                        if(detect_colisions(cursor,play->x,play->y,play->width,play->height))
                         {
-                            (*game_state) = GAME;
+                            play->map = hovering_play->map;    
+                            if(mouse_packets.lb)
+                            {
+                                (*game_state) = GAME;
+                            }
                         }
-                    }
-                    else if(detect_colisions(cursor,exit->x,exit->y,exit->width,exit->height))
-                    {
-                        exit->map = hovering_exit->map;
-                        if(mouse_packets.lb)
+                        else if(detect_colisions(cursor,exit->x,exit->y,exit->width,exit->height))
                         {
-                            (*game_state) = EXIT;
-                            end_game = 1;
+                            exit->map = hovering_exit->map;
+                            if(mouse_packets.lb)
+                            {
+                                (*game_state) = EXIT;
+                                end_game = 1;
+                            }
                         }
-                    }
-                    else
-                    {
-                        play->map = play_map;
-                        exit->map = exit_map;                    
+                        else
+                        {
+                            play->map = play_map;
+                            exit->map = exit_map;                    
+                        }
                     }
                 }
 
@@ -402,7 +406,7 @@ int breakout(state* game_state)
                             }
                             else
                             {
-                                if(get_cur_fig(explosion[i]) != 7)
+                                if(explosion[i]->cur_fig != 7)
                                     animate_sprite(explosion[i]);
                             }
                             
@@ -416,7 +420,6 @@ int breakout(state* game_state)
                         draw_sprite(platform);
                         draw_ball(ball);
                         draw_score(score,numbers);
-                        
                         
                         double_buff();
                     }
@@ -447,6 +450,21 @@ int breakout(state* game_state)
     for(int i = 0 ; i < 10; i++)
         destroy_sprite(numbers[i]); 
     destroy_sprite(platform);
+    destroy_sprite(game_over_logo);
+    destroy_sprite(win_logo);
+    destroy_sprite(lose_logo);
+    destroy_sprite(continue_logo);
+    
+    destroy_ball(ball);
+    for(int i = 0; i < 30; i++)
+        destroy_brick(bricks[i]);
+    destroy_sprite(cursor);
+    destroy_sprite(logo);
+    destroy_sprite(play);
+    destroy_sprite(hovering_play);
+    destroy_sprite(exit);
+    destroy_sprite(hovering_exit);
+    
 
 
     return 0;

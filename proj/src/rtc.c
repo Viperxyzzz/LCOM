@@ -10,43 +10,46 @@ int (rtc_subscribe_int)()
     return sys_irqsetpolicy(RTC_IRQ,IRQ_REENABLE,&hook_id);
 }
 
-int (read_rtc)(uint32_t address,uint16_t* input)
+int (read_rtc)(uint32_t address,uint8_t* input)
 {
-    uint32_t val = 0;
     sys_outb(RTC_ADDR_REG,address);
-    sys_inb(RTC_DATA_REG,&val);
-    *input = (uint16_t)val;
+    util_sys_inb(RTC_DATA_REG,input);
     return 0;
 }
 
-uint16_t bcd_to_decimal(uint16_t x) {
-    return x - 6 * (x >> 4);
+uint8_t bcd_to_dec(uint8_t input)
+{
+    return ((input & 0xF) | (input >> 4));
 }
 
 void (get_date)(Date* date)
 {
-    uint16_t seconds = 0;
+    uint8_t data = 0;
+    read_rtc(10,&data);
+
+
+    uint8_t seconds = 0;
     read_rtc(RTC_SECONDS,&seconds);
     date->seconds = seconds;
 
 
-    uint16_t minutes = 0;
+    uint8_t minutes = 0;
     read_rtc(RTC_MINUTES,&minutes);
     date->minutes = minutes;
 
-    uint16_t hours = 0;
+    uint8_t hours = 0;
     read_rtc(RTC_HOURS,&hours);
     date->hours = hours;
 
-    uint16_t day = 0;
+    uint8_t day = 0;
     read_rtc(RTC_DAY,&day);
     date->day = day;
 
-    uint16_t month = 0;
+    uint8_t month = 0;
     read_rtc(RTC_MONTH,&month);
     date->month = month;
 
-    uint16_t year = 0;
+    uint8_t year = 0;
     read_rtc(RTC_YEAR,&year);
     date->year = year;
     

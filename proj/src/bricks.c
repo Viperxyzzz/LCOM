@@ -42,3 +42,9 @@ int draw_brick(Brick* brick)
 
     return 0;
 }
+
+void destroy_brick(Brick* brick)
+{
+    free(brick->map);
+    free(brick);
+}

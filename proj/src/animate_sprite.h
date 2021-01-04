@@ -42,11 +42,4 @@ int animate_sprite(AnimSprite *asp);
  */
 void destroy_animSprite(AnimSprite* asp);
 
-/**
- * @brief Get the current figure that we are drawing
- * 
- * @param asp the AnimSprite we're drawing
- * @return int 0 in case it goes successfully, one otherwise
- */
-int get_cur_fig(AnimSprite* asp);
 #endif

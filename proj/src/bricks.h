@@ -36,4 +36,11 @@ Brick* create_brick(uint16_t x,uint16_t y);
  */
 int draw_brick(Brick* brick);
 
+/**
+ * @brief Destroys a brick
+ * 
+ * @param brick the brick we want to destroy
+ */
+void destroy_brick(Brick* brick);
+
 #endif

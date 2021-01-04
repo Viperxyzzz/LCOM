@@ -55,8 +55,6 @@ typedef enum {MENU,GAME,EXIT} state;
 
 int detect_colisions(Sprite* cursor,uint16_t x,uint16_t y, uint16_t width,uint16_t height);
 
-//_--------
-
 /**
  * @brief draws the score on the second buffer
  * 
@@ -64,6 +62,7 @@ int detect_colisions(Sprite* cursor,uint16_t x,uint16_t y, uint16_t width,uint16
  * @param numbers array with the sprites of numbers from zero to nine
  * @return int 0 in case it goes sucessfully, 1 otherwise
  */
+
 int draw_score(int points,Sprite **numbers);
 
 /**

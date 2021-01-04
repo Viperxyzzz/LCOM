@@ -59,7 +59,3 @@ void destroy_animSprite(AnimSprite* asp)
     free(asp);
 }
 
-int get_cur_fig(AnimSprite* asp)
-{
-    return asp->cur_fig;
-}
