@@ -1,0 +1,5 @@
+<map id="analize_buffer" name="analize_buffer">
+<area shape="rect" id="node1" title="Reads the status register and the output buffer, verifying if everything we&#39;re doing is valid." alt="" coords="5,31,107,57"/>
+<area shape="rect" id="node2" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Reads the output buffer of the mouse." alt="" coords="155,5,233,32"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="281,31,372,57"/>
+</map>

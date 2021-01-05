@@ -1,0 +1,5 @@
+<map id="draw_score" name="draw_score">
+<area shape="rect" id="node1" title="draws the score on the second buffer" alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node2" href="$sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws a Sprite." alt="" coords="141,5,229,32"/>
+<area shape="rect" id="node3" href="$videocard_8c.html#af1c008594d13de35fffab5d8e993e64b" title="sets a color of a pixel" alt="" coords="277,5,387,32"/>
+</map>

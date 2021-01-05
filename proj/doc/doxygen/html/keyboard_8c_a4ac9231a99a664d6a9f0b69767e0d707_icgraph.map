@@ -1,0 +1,5 @@
+<map id="kbd_subscribe_int" name="kbd_subscribe_int">
+<area shape="rect" id="node1" title="subscribes keyboard interrupts" alt="" coords="283,5,409,32"/>
+<area shape="rect" id="node2" href="$game_8h.html#a243eebdbcd4975e185ee6db7af1789ec" title="main game loop" alt="" coords="163,5,235,32"/>
+<area shape="rect" id="node3" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,115,32"/>
+</map>

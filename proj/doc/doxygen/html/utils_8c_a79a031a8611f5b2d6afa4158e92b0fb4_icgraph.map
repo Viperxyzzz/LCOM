@@ -1,0 +1,14 @@
+<map id="util_sys_inb" name="util_sys_inb">
+<area shape="rect" id="node1" title=" " alt="" coords="624,135,715,161"/>
+<area shape="rect" id="node2" href="$mouse_8h.html#a98f85ef5d2e59b7d0bf3d670bc1d7e39" title="Reads the status register and the output buffer, verifying if everything we&#39;re doing is valid." alt="" coords="301,33,403,60"/>
+<area shape="rect" id="node5" href="$keyboard_8h.html#ab9fd496144cbbeb999cf3708b0d05e58" title="reads the status register and the output buffer, verifying if everything we&#39;re doing is valid" alt="" coords="287,135,417,161"/>
+<area shape="rect" id="node6" href="$keyboard_8h.html#aea970a154161a35f6894898a092ed70a" title="reads the output buffer of the keyboard" alt="" coords="493,135,553,161"/>
+<area shape="rect" id="node7" href="$mouse_8h.html#a210374b50462acdedab00df64d5cea3c" title="Reads the output buffer of the mouse." alt="" coords="483,33,562,60"/>
+<area shape="rect" id="node8" href="$rtc_8h.html#a4ff6a8c6829e916dde1328e3d0598431" title="reads an @address and parses the data to @input" alt="" coords="488,185,557,212"/>
+<area shape="rect" id="node10" href="$mouse_8h.html#a3f8655dd3127f1644ff543a84bd0dc91" title="sends a command to the mouse" alt="" coords="288,236,416,263"/>
+<area shape="rect" id="node11" href="$timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a" title=" " alt="" coords="469,287,576,313"/>
+<area shape="rect" id="node3" href="$game_8h.html#a243eebdbcd4975e185ee6db7af1789ec" title="main game loop" alt="" coords="163,185,235,212"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,185,115,212"/>
+<area shape="rect" id="node9" href="$rtc_8h.html#afe118aaf7bee04364fb37d1c5fe03909" title="parses the date to the struct date" alt="" coords="316,185,388,212"/>
+<area shape="rect" id="node12" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title=" " alt="" coords="283,287,421,313"/>
+</map>

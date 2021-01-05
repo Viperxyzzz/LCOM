@@ -1,0 +1,7 @@
+<map id="vg_read_xpm" name="vg_read_xpm">
+<area shape="rect" id="node1" title="loads an image and displays it" alt="" coords="644,5,743,32"/>
+<area shape="rect" id="node2" href="$background_8h.html#a63a644c33686aebf568832bc8d63d282" title="draws the background on the second buffer" alt="" coords="473,5,596,32"/>
+<area shape="rect" id="node3" href="$game_8h.html#a243eebdbcd4975e185ee6db7af1789ec" title="main game loop" alt="" coords="163,5,235,32"/>
+<area shape="rect" id="node5" href="$background_8h.html#a8e73ff22194d3cf17b1e23cabdbfc204" title="clears the screen and resets it to display the background" alt="" coords="283,31,425,57"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,115,32"/>
+</map>

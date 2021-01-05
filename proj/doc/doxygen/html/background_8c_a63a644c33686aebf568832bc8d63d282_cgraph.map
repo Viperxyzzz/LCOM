@@ -1,0 +1,5 @@
+<map id="draw_background" name="draw_background">
+<area shape="rect" id="node1" title="draws the background on the second buffer" alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$videocard_8c.html#a78ce7c2bb3f96f7c3c5e7bea966688d9" title="loads an image and displays it" alt="" coords="176,5,275,32"/>
+<area shape="rect" id="node3" href="$videocard_8c.html#af1c008594d13de35fffab5d8e993e64b" title="sets a color of a pixel" alt="" coords="323,5,432,32"/>
+</map>

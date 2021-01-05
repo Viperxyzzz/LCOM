@@ -1,0 +1,5 @@
+<map id="get_date" name="get_date">
+<area shape="rect" id="node1" title="parses the date to the struct date" alt="" coords="5,5,77,32"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#a4ff6a8c6829e916dde1328e3d0598431" title="reads an @address and parses the data to @input" alt="" coords="125,5,195,32"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="243,5,333,32"/>
+</map>

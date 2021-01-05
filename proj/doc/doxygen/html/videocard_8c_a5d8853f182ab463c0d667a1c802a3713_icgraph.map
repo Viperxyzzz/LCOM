@@ -1,0 +1,6 @@
+<map id="vg_clear_screen" name="vg_clear_screen">
+<area shape="rect" id="node1" title="clears the screen" alt="" coords="473,5,588,32"/>
+<area shape="rect" id="node2" href="$background_8h.html#a8e73ff22194d3cf17b1e23cabdbfc204" title="clears the screen and resets it to display the background" alt="" coords="283,5,425,32"/>
+<area shape="rect" id="node3" href="$game_8h.html#a243eebdbcd4975e185ee6db7af1789ec" title="main game loop" alt="" coords="163,5,235,32"/>
+<area shape="rect" id="node4" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,115,32"/>
+</map>

@@ -1,0 +1,31 @@
+<map id="breakout" name="breakout">
+<area shape="rect" id="node1" title="main game loop" alt="" coords="5,461,77,488"/>
+<area shape="rect" id="node2" href="$background_8c.html#ae3c20fa712df5178ac481b723eeda0cb" title="allocs the memory needed to display the background" alt="" coords="137,5,259,32"/>
+<area shape="rect" id="node3" href="$mouse_8c.html#a98f85ef5d2e59b7d0bf3d670bc1d7e39" title="Reads the status register and the output buffer, verifying if everything we&#39;re doing is valid." alt="" coords="147,765,249,792"/>
+<area shape="rect" id="node6" href="$ball_8c.html#af2e4c147935fee32c08224e3ea9af110" title="Create a ball object." alt="" coords="155,107,241,133"/>
+<area shape="rect" id="node7" href="$bricks_8c.html#a98364f58f067b90c4b2eccbad63452de" title="Create a Brick object." alt="" coords="151,157,245,184"/>
+<area shape="rect" id="node8" href="$sprite_8c.html#a8c9bd7ad1fe65338d94c1a25da7595b5" title="Create a sprite object." alt="" coords="149,208,247,235"/>
+<area shape="rect" id="node9" href="$game_8c.html#af3829f26cc6d5e77dd08da1be81a2e9c" title="Detects cursor colisions." alt="" coords="140,259,256,285"/>
+<area shape="rect" id="node10" href="$videocard_8c.html#a85df6759fffcff7f1ec415a1e105c283" title="parses the content of the second buffer to the main buffer" alt="" coords="155,309,241,336"/>
+<area shape="rect" id="node11" href="$background_8c.html#a63a644c33686aebf568832bc8d63d282" title="draws the background on the second buffer" alt="" coords="321,335,444,361"/>
+<area shape="rect" id="node14" href="$sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws a Sprite." alt="" coords="500,740,588,767"/>
+<area shape="rect" id="node15" href="$keyboard_8c.html#ab9fd496144cbbeb999cf3708b0d05e58" title="reads the status register and the output buffer, verifying if everything we&#39;re doing is valid" alt="" coords="133,411,263,437"/>
+<area shape="rect" id="node17" href="$keyboard_8c.html#a8f4c0920056cb03d8ffcd27ee270be16" title="checks if we&#39;re reading a 2 bytes or 1 byte scancode" alt="" coords="127,512,269,539"/>
+<area shape="rect" id="node18" href="$keyboard_8c.html#a4ac9231a99a664d6a9f0b69767e0d707" title="subscribes keyboard interrupts" alt="" coords="135,563,261,589"/>
+<area shape="rect" id="node19" href="$mouse_8c.html#a08895a8a691590216c1e72bbf1b2d333" title="subscribes mouse interrupts" alt="" coords="125,613,271,640"/>
+<area shape="rect" id="node20" href="$mouse_8c.html#a626208129dd9f0b0dacc816aab4c784c" title="parses the packets to @mouse_packets" alt="" coords="148,664,248,691"/>
+<area shape="rect" id="node21" href="$mouse_8c.html#a1ffdbf8a53d4665cdf461c37e1476124" title="saves the packets we&#39;re currently reading" alt="" coords="141,715,255,741"/>
+<area shape="rect" id="node22" href="$background_8c.html#a8e73ff22194d3cf17b1e23cabdbfc204" title="clears the screen and resets it to display the background" alt="" coords="127,360,269,387"/>
+<area shape="rect" id="node24" href="$mouse_8c.html#a3f8655dd3127f1644ff543a84bd0dc91" title="sends a command to the mouse" alt="" coords="319,563,447,589"/>
+<area shape="rect" id="node25" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title=" " alt="" coords="129,816,267,843"/>
+<area shape="rect" id="node29" href="$timer_8c.html#ac57a7e1140a7e00ad95ac5488d2a671b" title=" " alt="" coords="131,917,265,944"/>
+<area shape="rect" id="node4" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Reads the output buffer of the mouse." alt="" coords="343,664,422,691"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="499,588,589,615"/>
+<area shape="rect" id="node12" href="$videocard_8c.html#a78ce7c2bb3f96f7c3c5e7bea966688d9" title="loads an image and displays it" alt="" coords="495,449,593,476"/>
+<area shape="rect" id="node13" href="$videocard_8c.html#af1c008594d13de35fffab5d8e993e64b" title="sets a color of a pixel" alt="" coords="641,689,751,716"/>
+<area shape="rect" id="node16" href="$keyboard_8c.html#aea970a154161a35f6894898a092ed70a" title="reads the output buffer of the keyboard" alt="" coords="353,461,413,488"/>
+<area shape="rect" id="node23" href="$videocard_8c.html#a5d8853f182ab463c0d667a1c802a3713" title="clears the screen" alt="" coords="325,385,440,412"/>
+<area shape="rect" id="node26" href="$timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a" title=" " alt="" coords="329,715,436,741"/>
+<area shape="rect" id="node27" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title=" " alt="" coords="335,765,431,792"/>
+<area shape="rect" id="node28" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title=" " alt="" coords="333,816,433,843"/>
+</map>

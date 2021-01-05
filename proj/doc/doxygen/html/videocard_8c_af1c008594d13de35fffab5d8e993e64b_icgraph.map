@@ -1,0 +1,13 @@
+<map id="pixel_set_color" name="pixel_set_color">
+<area shape="rect" id="node1" title="sets a color of a pixel" alt="" coords="791,81,900,108"/>
+<area shape="rect" id="node2" href="$ball_8h.html#adcc4d15fbe25e840d9c5b5486e65853d" title="draws a ball" alt="" coords="655,5,731,32"/>
+<area shape="rect" id="node3" href="$bricks_8h.html#a4ced059b5ae47681bc6d9a5a979dd4c0" title="Draws a brick." alt="" coords="651,56,735,83"/>
+<area shape="rect" id="node4" href="$sprite_8h.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws a Sprite." alt="" coords="649,107,737,133"/>
+<area shape="rect" id="node9" href="$videocard_8h.html#a78ce7c2bb3f96f7c3c5e7bea966688d9" title="loads an image and displays it" alt="" coords="644,169,743,196"/>
+<area shape="rect" id="node5" href="$animate__sprite_8h.html#a6202fe3d7bf9de2a3bd253c03bf1fc6a" title="processes the animation of an AnimSprite" alt="" coords="481,43,588,69"/>
+<area shape="rect" id="node6" href="$game_8h.html#a243eebdbcd4975e185ee6db7af1789ec" title="main game loop" alt="" coords="163,144,235,171"/>
+<area shape="rect" id="node8" href="$game_8h.html#ae8f92a4ba530bb31ea0178624c032a9d" title="draws the score on the second buffer" alt="" coords="491,144,579,171"/>
+<area shape="rect" id="node7" href="$proj_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,144,115,171"/>
+<area shape="rect" id="node10" href="$background_8h.html#a63a644c33686aebf568832bc8d63d282" title="draws the background on the second buffer" alt="" coords="473,195,596,221"/>
+<area shape="rect" id="node11" href="$background_8h.html#a8e73ff22194d3cf17b1e23cabdbfc204" title="clears the screen and resets it to display the background" alt="" coords="283,195,425,221"/>
+</map>

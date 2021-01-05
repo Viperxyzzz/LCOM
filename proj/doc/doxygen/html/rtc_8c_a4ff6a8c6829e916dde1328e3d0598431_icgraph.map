@@ -1,0 +1,4 @@
+<map id="read_rtc" name="read_rtc">
+<area shape="rect" id="node1" title="reads an @address and parses the data to @input" alt="" coords="125,5,195,32"/>
+<area shape="rect" id="node2" href="$rtc_8h.html#afe118aaf7bee04364fb37d1c5fe03909" title="parses the date to the struct date" alt="" coords="5,5,77,32"/>
+</map>
